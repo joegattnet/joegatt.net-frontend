@@ -1,0 +1,80 @@
+{
+  "extends": "react-app",
+  # "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+    }
+  },
+  "rules": {
+    "max-len": [1, { "code": 180, "ignoreComments": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/no-multi-comp": 0,
+    "import/default": 0,
+    "import/no-duplicates": 0,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/no-unresolved": 0,
+    "import/no-named-as-default": 2,
+    "no-mixed-operators": [2, { "allowSamePrecedence": true} ],
+    "no-use-before-define": [2, "nofunc"],
+    "comma-dangle": 0,  // not sure why airbnb turned this on. gross!
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "no-console": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "global-require": 0, // We require non js files all over the place
+    "react/prefer-stateless-function": 1, // FIX ME
+    "jsx-a11y/label-has-for": 1, //FIX ME
+    "jsx-a11y/no-static-element-interactions": 1,  // FIX ME
+    "no-bitwise": 1,  // FIX ME
+    "no-plusplus": 1,  // FIX ME
+    "react/style-prop-object": 0,
+    // Stupid because no exceptions
+    "react/forbid-prop-types": 1, // FIX ME
+    "jsx-a11y/anchor-has-content": 1, // FIX ME
+    "jsx-a11y/interactive-supports-focus": 1,
+    // FIX ME
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": 1,
+    //FIX ME
+    "jsx-a11y/iframe-has-title": 1,
+    //FIX ME
+    "react/no-unused-prop-types": 0,  // Buggy
+    "no-extra-boolean-cast": 0, // Buggy
+    "import/extensions": 0,
+    // because of a magic babel plugin - transform-imports
+    "import/no-extraneous-dependencies": 0
+    // because of a magic babel plugin - transform-imports
+  },
+  "plugins": [
+    "react", "import", "babel"
+  ],
+  "parser": "babel-eslint",
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/webpack.dev.js"
+      }
+    },
+    "import/core-modules": [
+      "components"
+    ]
+  },
+  "globals": {
+    "__DEVELOPMENT__": true,
+    "__CLIENT__": true,
+    "__DEVTOOLS__": true,
+    "__DLLS__": true,
+    "__AB_TEST__": true,
+    "browser": true,
+  }
+}
