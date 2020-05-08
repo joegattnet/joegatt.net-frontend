@@ -91,30 +91,28 @@ const StyledPage = styled.div`
   }
 `;
 
-class App extends Component {
-  render() {
-    return (
-      <StyledPage className="App">
-        <GlobalStyles />
-        <UserContextProvider>
-          {/* <Header /> */}
-          <section id="content">
-            <Switch>
-              <Route path="/texts/:id" component={Text} />
-              <Route exact path="/texts" component={Texts} />
-              <Route exact path="/citations" component={Citations} />
-              <Route exact path="/links" component={Links} />
-              <Route exact path="/tags" component={Tags} />
-              <Route exact path="/api" component={Api} />
-              <Route exact path="/user/register" component={Register} />
-              <Route exact path="/:feature/:featureId" component={Feature} />
-              <Route exact path="/:feature" component={Feature} />
-              <Route exact path="/" component={Home} />
-            </Switch>
-          </section>
-          <Footer />
-          <hr />
-          {/* <footer className="App-header">
+const App = () => (
+  <StyledPage className="App">
+    <GlobalStyles />
+    <UserContextProvider>
+      {/* <Header /> */}
+      <section id="content">
+        <Switch>
+          <Route path="/texts/:id" component={Text} />
+          <Route exact path="/texts" component={Texts} />
+          <Route exact path="/citations" component={Citations} />
+          <Route exact path="/links" component={Links} />
+          <Route exact path="/tags" component={Tags} />
+          <Route exact path="/api" component={Api} />
+          <Route exact path="/user/register" component={Register} />
+          <Route exact path="/:feature/:featureId" component={Feature} />
+          <Route exact path="/:feature" component={Feature} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </section>
+      <Footer />
+      <hr />
+      {/* <footer className="App-header">
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/texts">Texts</Link></li>
@@ -124,13 +122,11 @@ class App extends Component {
               <li><Link to="/api">API</Link></li>
             </ul>
           </footer> */}
-          <UserContext.Consumer>
-            {({user}) => user.signedIn? <LoginToolbar /> : <Login />}
-          </UserContext.Consumer>
-        </UserContextProvider>
-      </StyledPage>
-    );
-  }
-}
+      <UserContext.Consumer>
+        {({user}) => user.signedIn? <LoginToolbar /> : <Login />}
+      </UserContext.Consumer>
+    </UserContextProvider>
+  </StyledPage>
+);
 
 export default App;
