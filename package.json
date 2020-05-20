@@ -1,17 +1,17 @@
 {
-  "name": "joegatt.net-client",
+  "name": "joegatt.net-frontend",
   "version": "4.0.0-alpha",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joegattnet/joegatt.net-client.git"
+    "url": "git+https://github.com/joegattnet/joegatt.net-frontend.git"
   },
   "author": "Joe Gatt",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joegattnet/joegatt.net-client/issues"
+    "url": "https://github.com/joegattnet/joegatt.net-frontend/issues"
   },
-  "homepage": "https://github.com/joegattnet/joegatt.net-client#readme",
+  "homepage": "https://github.com/joegattnet/joegatt.net-frontend#readme",
   "dependencies": {
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
